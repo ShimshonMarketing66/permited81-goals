@@ -1,0 +1,40 @@
+<div class="wrapper">
+
+</div>
+<h1>
+    {{goal.name}}
+</h1>
+
+<h2>
+    {{goal.description}}
+</h2>
+
+<h3>
+    Steps:
+</h3>
+
+<div *ngFor="let step of goal.steps;let i=index" 
+[style.background]="i%2==0?'#878787':'#626262'"
+[style.text-decoration]="step.completed?'line-through':'unset'"
+> 
+    <mat-checkbox  (change)="setComplete($event.checked,step)" [checked]="step.completed" ></mat-checkbox>
+    <h4>
+        {{step.name}}  
+    </h4>
+    <h5>
+        {{step.description}}
+    </h5>
+    <h6>
+        {{step.dueDate}}
+    </h6>
+
+    
+    
+</div>
+
+
+<div>
+    <button (click)="addStep()">
+        Add Step
+    </button>
+ </div>

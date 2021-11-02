@@ -1,0 +1,41 @@
+
+    <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+            <label class="center-block">Name:<br>
+                <input class="form-control" formControlName="name">
+            </label>
+        </div>
+        <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="angForm.controls['name']?.errors?.required">
+                Name is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">
+                Description:
+            </label><br>
+            <textarea class="form-control" style="width: -webkit-fill-available;resize: none;"
+                formControlName="description"></textarea>
+        </div>
+        <div *ngIf="angForm.controls['description'].invalid && (angForm.controls['description'].dirty || angForm.controls['description'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="angForm.controls['description']?.errors?.required">
+                Description is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="start">
+                Due Date
+            </label>
+            <br>
+            <input formControlName="dueDate" type="date" id="start" name="trip-start">
+        </div>
+
+        <div class="form-group">
+            <button mat-button (click)="add()" [disabled]="!angForm.valid">Add {{typeAction}}</button>
+        </div>
+
+    </form>

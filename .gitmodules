@@ -1,0 +1,8 @@
+[submodule "client"]
+	path = client
+	url = https://github.com/ShimshonMarketing66/permited81-goals.git
+
+[submodule "server"]
+	path = server
+	url = https://github.com/ShimshonMarketing66/permited81-goals.git
+
