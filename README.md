@@ -36,6 +36,8 @@ to call a Node.js RESTful service.
 
 1. npm i 
 
+1. add the file firebase-service-account.json (was sent from email) to the src folder
+
 1. npm run dev
 
 
